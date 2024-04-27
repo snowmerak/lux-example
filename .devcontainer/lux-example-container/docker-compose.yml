@@ -1,0 +1,12 @@
+version: '3'
+services:
+  lux-example:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../../.:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock
+  gernet:
+    image: ghcr.io/microsoft/garnet
+    network_mode: service:lux-example

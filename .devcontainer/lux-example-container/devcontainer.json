@@ -1,0 +1,19 @@
+{
+  "name": "lux-example",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "lux-example",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go-nightly",
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
