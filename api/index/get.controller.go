@@ -19,7 +19,6 @@ func NewGetController() *GetController {
 		requestMiddlewares:  []middleware.Request{},
 		responseMiddlewares: []middleware.Response{},
 		handler: func(lc *context.LuxContext) error {
-			// Write your handler here
 			return lc.ReplyString("Hello, World!")
 		},
 	}

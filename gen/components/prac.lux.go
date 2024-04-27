@@ -1,7 +1,10 @@
 package components
 
 import (
-	index "prac/index"
+	count "prac/api/count"
+	index "prac/api/index"
+	redis "prac/lib/client/redis"
+	counter "prac/lib/service/counter"
 )
 
 type Prac struct {
@@ -12,12 +15,14 @@ type Prac struct {
 func NewPrac() *Prac {
 	return &Prac{
 		cons: []any{
+			count.NewGetController,
 			index.NewGetController,
-			index.NewPostController,
+			redis.NewService,
+			counter.NewService,
 		},
 		upds: []any{
+			count.RegisterGetController,
 			index.RegisterGetController,
-			index.RegisterPostController,
 		},
 	}
 }
